@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  fhir_service:
+    image: rtweed/qewd-server:latest
+    ports:
+      - "8085:8080"
+    volumes:
+      - ".\\:/opt/qewd/mapped"
+      - ".\\yottaDB:/root/.yottadb/r1.22_x86_64/g"
+    networks:
+      - default
+    environment:
+      - mode=microservice
+      - node_env=development
+
+networks:
+  default:
+    external:
+      name: qewd-courier_qewd-net   

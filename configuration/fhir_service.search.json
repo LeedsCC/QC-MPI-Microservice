@@ -1,0 +1,8 @@
+{
+	"Patient": {
+		"nhsNumber": "identifier={{ Patient.nhsNumber }}"
+	},
+	"PractitionerRole": {
+		"practitionerReference": "practitioner={{ PractitionerRole.practitionerReference }}"
+	}
+}
